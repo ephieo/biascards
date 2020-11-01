@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/" component={Creation} />
+          <Route exact path="/" component={Creation} />
         </Switch>
       </Router>
     </div>
