@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 
 import Card from './components/card';
-// import singer from './images/do4.jpeg';
+import Form from './components/form';
 
 function App() {
   const [background, setBackground] = useState('');
@@ -55,44 +55,13 @@ function App() {
             FORM
           </button>
           {toggle ? (
-            <form>
-              <label htmlFor="background">Set Your background colour:</label>
-              <input
-                type="text"
-                name="background"
-                onChange={(event) => setBackground(event.target.value)}
-              />
-              <label htmlFor="name">Enter your bias' name:</label>
-              <input
-                type="text"
-                name="name"
-                onChange={(event) => setName(event.target.value)}
-              />
-              <label htmlFor="group">Enter Your Bias' Group Name:</label>
-              <input
-                type="text"
-                name="group"
-                onChange={(event) => setGroup(event.target.value)}
-              />
-              <label htmlFor="src">
-                Enter your image address to see your beautiful bias:
-              </label>
-              <input
-                type="url"
-                name="src"
-                onChange={(event) => setSrc(event.target.value)}
-              />
-
-              <label htmlFor="description">
-                Describe your fave Idol or write a loving message or even your
-                favourite lyric?
-              </label>
-              <textarea
-                type="textarea"
-                name="description"
-                onChange={(event) => setDescription(event.target.value)}
-              />
-            </form>
+            <Form
+              setSrc={setSrc}
+              setBack={setBackground}
+              setDes={setDescription}
+              setGroup={setGroup}
+              setName={setName}
+            />
           ) : (
             <h1>click the form button to create your bias card</h1>
           )}
