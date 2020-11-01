@@ -27,7 +27,7 @@ function App() {
           .replace('image/png', 'image/octet-stream');
         window.location.href = image; // it will save locally
         // window.saveAs(image.toDataURL(), 'bias.png');
-        //hello
+        //hello testing
       });
     });
   }, []);
