@@ -1,13 +1,72 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Rakkas', cursive;
+}
+body {
+  background: #eeeddb;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  /* border: solid red 5px; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  flex-direction: column;
+}
+button {
+  border: 3px #2b3c44 solid;
+  background: #2b3c44;
+  color: #eeeddb;
+  margin: 1rem;
+  font-size: 2vw;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #2b3c44;
+  width: 20vw;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  border: 3px #2b3c44 solid;
+  margin: 1rem;
+}
+
+form label {
+  margin: 1rem;
+  padding: 1rem;
+  color: #eeeddb;
+}
+
+form input,
+form textarea {
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 0.5rem;
 }
