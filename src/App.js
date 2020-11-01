@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import html2canvas from 'html2canvas';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Card from './components/card';
 import Form from './components/form';
@@ -11,7 +12,6 @@ function App() {
   const [description, setDescription] = useState('');
   const [group, setGroup] = useState('');
   const [toggle, setToggle] = useState(false);
-  console.log(toggle);
 
   useEffect(() => {
     document.querySelector('#download').addEventListener('click', () => {
@@ -34,39 +34,45 @@ function App() {
 
   return (
     <div className="App">
-      <>
-        <div className="container">
-          <div id="export">
-            <Card
-              name={name}
-              src={src}
-              alt={`image of ${name}`}
-              description={description}
-              background={background}
-              imgSrc={src}
-              groupName={group}
-              download
-            ></Card>
-          </div>
-          <button id="download">Export As PNG</button>
-          <button
-            onClick={() => (!toggle ? setToggle(true) : setToggle(false))}
-          >
-            FORM
-          </button>
-          {toggle ? (
-            <Form
-              setSrc={setSrc}
-              setBack={setBackground}
-              setDes={setDescription}
-              setGroup={setGroup}
-              setName={setName}
-            />
-          ) : (
-            <h1>click the form button to create your bias card</h1>
-          )}
-        </div>
-      </>
+      <Router>
+        <Route path="/">
+          <Switch>
+            <>
+              <div className="container">
+                <div id="export">
+                  <Card
+                    name={name}
+                    src={src}
+                    alt={`image of ${name}`}
+                    description={description}
+                    background={background}
+                    imgSrc={src}
+                    groupName={group}
+                    download
+                  ></Card>
+                </div>
+                <button id="download">Export As PNG</button>
+                <button
+                  onClick={() => (!toggle ? setToggle(true) : setToggle(false))}
+                >
+                  FORM
+                </button>
+                {toggle ? (
+                  <Form
+                    setSrc={setSrc}
+                    setBack={setBackground}
+                    setDes={setDescription}
+                    setGroup={setGroup}
+                    setName={setName}
+                  />
+                ) : (
+                  <h1>click the form button to create your bias card</h1>
+                )}
+              </div>
+            </>
+          </Switch>
+        </Route>
+      </Router>
     </div>
   );
 }
