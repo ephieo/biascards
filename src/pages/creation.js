@@ -5,7 +5,7 @@ import Card from './../components/card';
 import Form from './../components/form';
 
 import howto from './../images/howto.png';
-import arrow from './../images/arrow.svg';
+// import arrow from './../images/arrow.svg';
 
 export default function Creation() {
   const [background, setBackground] = useState('');
@@ -19,8 +19,9 @@ export default function Creation() {
     document.querySelector('#download').addEventListener('click', () => {
       html2canvas(document.querySelector('#export'), {
         logging: true,
-        // letterRendering: 1,
+        letterRendering: 1,
         allowTaint: false,
+        backgroundColor: 'transparent',
         useCORS: true,
       }).then(function (canvas) {
         console.log(canvas);
@@ -29,8 +30,6 @@ export default function Creation() {
           .replace('image/png', 'image/octet-stream');
         console.log(image);
         window.location.href = image; // it will save locally
-        // window.saveAs(image, 'bias.png');
-        //hello testing
       });
     });
   }, []);
@@ -39,14 +38,14 @@ export default function Creation() {
     <>
       <h1>BIAS CARDS</h1>
       <div className="maincont">
-        <a href="#download">
+        {/* <a href="#download">
           <img
             src={arrow}
             alt="icon to reroute you to the form"
             className="arrow"
           />
         </a>
-        <h2 align="center">CLICK FOR FORM</h2>
+        <h2 align="center">CLICK FOR FORM</h2> */}
         <img
           src={howto}
           alt="instructions card for the app"
