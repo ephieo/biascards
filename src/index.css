@@ -1,12 +1,35 @@
+:root {
+  --cream: #eeeddb;
+  --green: #2b3c44;
+  --orange: #eda147;
+}
+
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: 'Rakkas', cursive;
+  font-family: 'VT323', monospace;
 }
+
 body {
-  background: #eeeddb;
+  background: var(--cream);
+}
+h1,
+p,
+h2 {
+  color: var(--green);
+}
+h2 {
+  width: 20vw;
+}
+
+h1 {
+  font-size: 3rem;
+}
+.howto {
+  max-width: 60vw;
+  /* margin: 0.1rem 0; */
 }
 
 .container {
@@ -21,18 +44,36 @@ body {
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  min-height: 100%;
-  margin: 0;
+  min-height: 70%;
+  margin-right: 1.5rem;
   -ms-flex-pack: distribute;
   justify-content: space-around;
   flex-direction: column;
+
+  /* border: solid 3px var(--green); */
+}
+
+.maincont {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  /* border: solid red 3px; */
 }
 button {
   border: 3px #2b3c44 solid;
   background: #2b3c44;
-  color: #eeeddb;
+  color: #eda147;
   margin: 1rem;
   font-size: 2vw;
+}
+button:focus,
+button:active,
+button:hover {
+  box-shadow: 2px 4px var(--green);
+  border: solid 3px var(--green);
+  outline-color: var(--orange);
 }
 
 form {
@@ -69,4 +110,22 @@ form textarea {
   border: 3px black solid;
   border-radius: 10px;
   padding: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.placetext {
+  font-size: 100%;
+}
+
+@media all and (max-width: 965px) {
+  .howto {
+    width: 60vw;
+  }
+  form {
+    width: 60vw;
+  }
+  input,
+  textarea {
+    width: 20vw;
+  }
 }

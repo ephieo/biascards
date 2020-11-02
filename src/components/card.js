@@ -13,8 +13,8 @@ const Div = styled.div`
   overflow: hidden;
 `;
 const ImgDiv = styled.div`
-  max-width: 70%;
-  max-height: 50%;
+  max-width: 90%;
+  max-height: 70%;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -43,7 +43,7 @@ export default function Card({ imgSrc, ...props }) {
         {imgSrc ? (
           <Img src={props.src} alt={props.alt} />
         ) : (
-          <h1>Enter Image to view an image of your fave!!!</h1>
+          <h1 className="placetext">CARD WILL APPEAR HERE...</h1>
         )}
       </ImgDiv>
       <Name>{props.name}</Name>
